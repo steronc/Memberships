@@ -13,6 +13,8 @@ namespace Memberships.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        //
+
         [MaxLength(255)]
         [Required]
         public string Title  { get; set; }
