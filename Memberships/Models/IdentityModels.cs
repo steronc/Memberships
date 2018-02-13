@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Memberships.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Memberships.Entities;
 
 namespace Memberships.Models
 {
@@ -35,5 +36,6 @@ namespace Memberships.Models
         public DbSet<Part> Parts { get; set; }
         public DbSet<ItemType> ItemTypes { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
