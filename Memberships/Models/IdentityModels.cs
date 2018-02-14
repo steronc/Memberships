@@ -5,12 +5,18 @@ using Memberships.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Memberships.Entities;
+using System;
 
 namespace Memberships.Models
 {
     // È possibile aggiungere dati del profilo per l'utente aggiungendo altre proprietà alla classe ApplicationUser. Per altre informazioni, vedere https://go.microsoft.com/fwlink/?LinkID=317594.
     public class ApplicationUser : IdentityUser
     {
+        // additional fileds
+        public string FirstName { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime Registered { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Tenere presente che il valore di authenticationType deve corrispondere a quello definito in CookieAuthenticationOptions.AuthenticationType
@@ -41,6 +47,8 @@ namespace Memberships.Models
         public DbSet<ProductLinkText> ProductLinkTexts { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<ProductItem> ProductItems { get; set; }
+        public DbSet<SubscriptionProduct> SubscriptionProducts { get; set; }
+        public DbSet<UserSubscription> UserSubscriptions { get; set; }
 
         
     }

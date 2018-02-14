@@ -7,8 +7,8 @@ using System.Web;
 
 namespace Memberships.Entities
 {
-    [Table("SubscriptionProduct")]
-    public class SubscriptionProduct
+    [Table("ProductItem")]
+    public class ProductItem
     {
         [Required]
         [Key, Column(Order = 1)]
@@ -16,12 +16,12 @@ namespace Memberships.Entities
 
         [Required]
         [Key, Column(Order = 2)]
-        public int SubscriptionId { get; set; }
+        public int ItemId { get; set; }
 
         [NotMapped]
         public int OldProductId { get; set; }
 
         [NotMapped]
-        public int OldSubscriptionId { get; set; }
+        public int OldItemId { get; set; }
     }
 }
