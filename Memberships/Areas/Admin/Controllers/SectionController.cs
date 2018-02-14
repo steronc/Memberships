@@ -10,19 +10,19 @@ using System.Web.Mvc;
 using Memberships.Entities;
 using Memberships.Models;
 
-namespace Memberships.Controllers
+namespace Memberships.Areas.Admin.Controllers
 {
     public class SectionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Section
+        // GET: Admin/Section
         public async Task<ActionResult> Index()
         {
             return View(await db.Sections.ToListAsync());
         }
 
-        // GET: Section/Details/5
+        // GET: Admin/Section/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -37,13 +37,13 @@ namespace Memberships.Controllers
             return View(section);
         }
 
-        // GET: Section/Create
+        // GET: Admin/Section/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Section/Create
+        // POST: Admin/Section/Create
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -60,7 +60,7 @@ namespace Memberships.Controllers
             return View(section);
         }
 
-        // GET: Section/Edit/5
+        // GET: Admin/Section/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,7 +75,7 @@ namespace Memberships.Controllers
             return View(section);
         }
 
-        // POST: Section/Edit/5
+        // POST: Admin/Section/Edit/5
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -91,7 +91,7 @@ namespace Memberships.Controllers
             return View(section);
         }
 
-        // GET: Section/Delete/5
+        // GET: Admin/Section/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -106,7 +106,7 @@ namespace Memberships.Controllers
             return View(section);
         }
 
-        // POST: Section/Delete/5
+        // POST: Admin/Section/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
